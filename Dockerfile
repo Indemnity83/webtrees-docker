@@ -2,7 +2,7 @@ FROM alpine
 
 LABEL maintainer="Kyle Klaus <kklaus@indemnity83.com>"
 
-ARG branchortag
+ENV WEBTREES_VERSION=master
 
 # Install packages
 RUN apk --no-cache add git nginx php php7-fpm php7-json php7-mbstring php7-iconv \
@@ -34,7 +34,7 @@ USER nobody
 
 # Add application
 WORKDIR /var/www/html
-RUN git clone -c advice.detachedHead=false -b ${branchortag} https://github.com/fisharebest/webtrees.git .
+RUN git clone -c advice.detachedHead=false -b ${WEBTREES_VERSION} https://github.com/fisharebest/webtrees.git .
 
 # Expose the application
 EXPOSE 8080
