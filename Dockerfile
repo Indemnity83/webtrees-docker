@@ -8,7 +8,8 @@ ENV UPLOAD_LIMIT=20M
 # Install packages
 RUN apk --no-cache add git nginx php php7-fpm php7-json php7-mbstring php7-iconv \
     php7-session php7-xml php7-curl php7-fileinfo php7-gd php7-intl php7-zip \
-    php7-simplexml php7-pdo php7-sqlite3 php7-pdo_sqlite php7-exif supervisor
+    php7-simplexml php7-pdo php7-sqlite3 php7-pdo_sqlite php7-exif php7-pdo_mysql \
+    php7-pdo_pgsql php7-pdo_odbc supervisor
 
 # Configure NGINX
 COPY config/nginx.conf /etc/nginx/nginx.conf
