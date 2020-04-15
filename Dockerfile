@@ -28,7 +28,8 @@ RUN mkdir -p /var/www/html
 RUN chown -R nobody.nobody /var/www && \
   chown -R nobody.nobody /run && \
   chown -R nobody.nobody /var/log/php7 && \
-  chown -R nobody.nobody /var/log/nginx
+  chown -R nobody.nobody /var/log/nginx && \
+  chmod 0751 /var/lib/nginx
 
 # Switch to use a non-root user from here on
 USER nobody
