@@ -3,6 +3,7 @@ FROM alpine
 LABEL maintainer="Kyle Klaus <kklaus@indemnity83.com>"
 
 ENV WEBTREES_VERSION=master
+ENV UPLOAD_LIMIT=20M
 
 # Install packages
 RUN apk --no-cache add git nginx php php7-fpm php7-json php7-mbstring php7-iconv \

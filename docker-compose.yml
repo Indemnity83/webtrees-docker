@@ -5,5 +5,7 @@ services:
     build: .
     ports:
       - 8080:8080
+    environment:
+      - UPLOAD_LIMIT=20M
     volumes:
       - ./data:/var/www/html/data
