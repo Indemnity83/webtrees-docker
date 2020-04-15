@@ -34,7 +34,10 @@ USER nobody
 
 # Add application
 WORKDIR /var/www/html
-RUN git clone -c advice.detachedHead=false -b ${WEBTREES_VERSION} https://github.com/fisharebest/webtrees.git .
+RUN git clone -c advice.detachedHead=false --depth=1 -b ${WEBTREES_VERSION} https://github.com/fisharebest/webtrees.git .
+
+# Trim some fat
+RUN rm -rf .git
 
 # Expose the application
 EXPOSE 8080
