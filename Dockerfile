@@ -2,7 +2,7 @@ FROM alpine
 
 LABEL maintainer="Kyle Klaus <kklaus@indemnity83.com>"
 
-ENV WEBTREES_VERSION=master
+ARG WEBTREES_VERSION=master
 ENV UPLOAD_LIMIT=20M
 
 # Install packages
