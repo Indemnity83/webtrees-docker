@@ -2,7 +2,7 @@ FROM alpine
 
 LABEL maintainer="Kyle Klaus <kklaus@indemnity83.com>"
 
-ARG WEBTREES_VERSION=master
+ARG VERSION
 ENV UPLOAD_LIMIT=20M
 
 # Install packages
@@ -37,7 +37,7 @@ USER nobody
 
 # Add application
 WORKDIR /var/www/html
-RUN git clone -c advice.detachedHead=false --depth=1 -b ${WEBTREES_VERSION} https://github.com/fisharebest/webtrees.git .
+RUN git clone -c advice.detachedHead=false --depth=1 -b ${VERSION} https://github.com/fisharebest/webtrees.git .
 
 # Trim some fat
 RUN rm -rf .git

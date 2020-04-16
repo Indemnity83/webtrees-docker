@@ -20,10 +20,10 @@ help: ## This help
 # DOCKER TASKS
 # Build the container
 build: ## Build the container
-	docker build --build-arg WEBTREES_VERSION=$(VERSION) -t $(APP_NAME) .
+	docker build --build-arg VERSION=$(VERSION) -t $(APP_NAME) .
 
 build-nc: ## Build the container without caching
-	docker build --build-arg WEBTREES_VERSION=$(VERSION) --no-cache -t $(APP_NAME) .
+	docker build --build-arg VERSION=$(VERSION) --no-cache -t $(APP_NAME) .
 
 run: ## Run container on port configured in `.env`
 	docker run -it --rm --env-file .env -v $(DATA_VOLUME):/var/www/html/data -p $(PORT):8080 --name "$(APP_NAME)" $(APP_NAME)
